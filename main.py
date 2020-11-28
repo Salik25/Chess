@@ -1,4 +1,4 @@
-def chek_color(x, y, x2, y2): # функция для проверки цвета двух полей
+def chek_color(x, y, x2, y2):  # функция для проверки цвета двух полей
     if (x + y + x2 + y2) % 2 == 0:
         answer = 'Поля одинакового цвета'
         return answer
@@ -7,7 +7,7 @@ def chek_color(x, y, x2, y2): # функция для проверки цвет�
         return answer
 
 
-def chek_queen(x, y, x2, y2): # бьет ли поле ферзь
+def chek_queen(x, y, x2, y2):  # бьет ли поле ферзь
     if x == x2 or y == y2:
         answer = 'Ферзь бьет'
         return answer
@@ -19,8 +19,8 @@ def chek_queen(x, y, x2, y2): # бьет ли поле ферзь
         return answer
 
 
-def chek_horse(x, y, x2, y2): # бьет ли поле конь
-    if (abs(x - x2) == 1) and (abs(y - y2) == 2):
+def chek_horse(x, y, x2, y2):  # бьет ли поле конь
+    if ((abs(x - x2) == 1) and (abs(y - y2) == 2)) or ((abs(x - x2) == 2) and (abs(y - y2) == 1)):
         answer = 'Конь бьет'
         return answer
     else:
@@ -28,16 +28,16 @@ def chek_horse(x, y, x2, y2): # бьет ли поле конь
         return answer
 
 
-def rook_walk(x, y, x2, y2): # как ходит ладья
+def rook_walk(x, y, x2, y2):  # как ходит ладья
     if x == x2 or y == y2:
         answer = 'Можно дойти за 1 ход ладьей'
         return answer
-    if y + y2 == x + x2:
+    else:
         answer = f'Можно дойти за два хода. Промежуточный поле будет {x}:{y2}'
         return answer
 
 
-def queen_walk(x, y, x2, y2): # как ходит ферзь
+def queen_walk(x, y, x2, y2):  # как ходит ферзь
     if (x == x2 or y == y2) or (x + y == x2 + y2 or x - y == x2 - y2):
         answer = 'Можно дойти за 1 ход ферзем'
         return answer
@@ -46,7 +46,7 @@ def queen_walk(x, y, x2, y2): # как ходит ферзь
         return answer
 
 
-def elephant_walk(x, y, x2, y2): # как ходит слон
+def elephant_walk(x, y, x2, y2):  # как ходит слон
     if abs(x - x2) == abs(y - y2):
         answer = 'Можно дойти за 1 ход слоном'
         return answer
